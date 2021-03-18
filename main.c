@@ -6,6 +6,6 @@ void main()
 {
 	/* */
 	struct list *l;
-	l = create_list(10);
+	l = create_list();
 
 }
