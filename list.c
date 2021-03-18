@@ -8,7 +8,6 @@
 struct singly_linked_list *init_list( struct singly_linked_list *t )
 {
 	t->head = NULL;
-	t->tail = NULL;
 	t->count = 0;
 
 	return t;
