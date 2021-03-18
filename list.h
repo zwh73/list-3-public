@@ -2,18 +2,23 @@
 
 #include "defs.h"
 
-struct list {
-	T *ele;
-	int counter;
-	int capacity;
+struct node {
+	T data;
+	struct node *next;
 };
 
-struct list *create_list(int init_cap);
+struct singly_linked_list {
+	struct node *head;
+	//struct node *tail;
+	int count;
+};
 
-struct list *insert(struct list *l, int i, T e);
-struct list *delete_at(struct list *l, int i);
+struct singly_linked_list *create_list();
 
-int size( struct list *l );
-T get( struct list *l, int i );
-void replace( struct list *l, int i, T e );
-int index( struct list *l, T e );
+struct singly_linked_list *insert(struct singly_linked_list *t, int i, T e);
+struct singly_linked_list *delete_at(struct singly_linked_list *t, int i);
+
+int size( struct singly_linked_list *t );
+T get( struct struct singly_linked_list *t, int i );
+void replace( struct singly_linked_list *t, int i, T e );
+int index( struct singly_linked_list *t, T e );
