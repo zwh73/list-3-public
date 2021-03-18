@@ -5,14 +5,28 @@
 #include "list.h"
 
 
-struct list *create_list( int init_cap )
+struct singly_linked_list *init_list( struct singly_linked_list *t )
 {
-    struct list *l = (struct list *)malloc( sizeof(struct list) );
-	
-	if( init_cap <= 0 ) init_cap = 10;
-	l->ele = (T *)malloc( init_cap * sizeof(T) );
+	t->head = NULL;
+	t->tail = NULL;
+	t->count = 0;
 
-	l->capacity = init_cap;
-    l->counter = 0; 
-    return l;	
+	return t;
+}
+
+struct singly_linked_list *create_list()
+{
+    struct singly_linked_list *t = (struct singly_linked_list *)malloc( sizeof(struct singly_linked_list) );
+
+	return init_list( t );
+}
+
+struct node *create_node( T e )
+{
+	struct node *p = (struct node *)malloc( sizeof(struct node) );
+
+	p->data = e;
+	p->next = NULL;
+
+	return p;
 }
